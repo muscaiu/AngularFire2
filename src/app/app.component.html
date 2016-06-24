@@ -1,3 +1,6 @@
-<h1>
-  {{title}}
-</h1>
+<h2>w00f</h2>
+<ul *ngFor="let item of items | async">
+  <li class="text">
+    {{item.$value}}
+  </li>
+</ul>
