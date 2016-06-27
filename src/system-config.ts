@@ -44,6 +44,7 @@ const barrels: string[] = [
   'app/test-route',
   'app/test-component',
   'app/home-component',
+  'app/formular',
   /** @cli-barrel */
 ];
 
