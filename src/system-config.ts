@@ -39,6 +39,9 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/firebase-list',
+  'app/navbar',
+  'app/test-route',
   /** @cli-barrel */
 ];
 
