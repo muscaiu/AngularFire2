@@ -42,6 +42,8 @@ const barrels: string[] = [
   'app/firebase-list',
   'app/navbar',
   'app/test-route',
+  'app/test-component',
+  'app/home-component',
   /** @cli-barrel */
 ];
 

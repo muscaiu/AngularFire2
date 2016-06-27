@@ -6,17 +6,38 @@ import { AngularFire, FirebaseObjectObservable , FirebaseListObservable } from '
   //moduleId: module.id,
   selector: 'app-firebase-list',
   template: `
-<ul>
-  <li *ngFor="let item of items | async">
-    <input type="text" #updatesize [value]="item.text" />
-    <button (click)="update(item.$key, updatesize.value)">Update</button>
-    <button (click)="deleteItem(item.$key)">Delete</button>
-  </li>
-</ul>
+<input type="text" #newName />
+<input type="text" #newEmail />
+<button (click)="addField(newName.value, newEmail.value )">Add</button>
 
-<input type="text" #newitem />
-<button (click)="add(newitem.value)">Add</button>
-<button (click)="deleteEverything()">Delete All</button>
+<!-- <button (click)="deleteEverything()">Delete All</button> -->
+
+<div class= "container">
+  <table class= "table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items | async">
+        <td>{{ item.name }} 
+            <input type="text" #updatename [value]="item.name" />
+        </td>
+        <td>
+           {{ item.email }}
+           <input type="text" #updateemail [value]="item.email" />
+        </td>
+        <td><button (click)="update(item.$key, updatename.value, updateemail.value)">Update</button></td>
+        <td><button (click)="deleteItem(item.$key)">X</button></td>
+      <tr>
+    </tbody>
+  </table>
+</div>
+
 `
 })
 export class FirebaseListComponent{
@@ -26,11 +47,11 @@ export class FirebaseListComponent{
   constructor(af: AngularFire) {
     this.items = af.database.list('/messages');
   }
-  add(newName: string) {
-    this.items.push({ text: newName });
+  addField(newName: string, newEmail: string) {
+    this.items.push({ name: newName, email: newEmail });
   }
-  update(key: string, newSize: string) {
-    this.items.update(key, { size: newSize });
+  update(key: string, newName: string, newEmail: string) {
+    this.items.update(key, { name: newName, email: newEmail });
   }
   deleteItem(key: string) {    
     this.items.remove(key); 
