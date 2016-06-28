@@ -63,7 +63,9 @@ System.config({
     'rxjs': 'vendor/rxjs',
     'main': 'main.js'
   },
-  packages: cliSystemConfigPackages
+  packages: 
+    cliSystemConfigPackages,
+    "/ng2-slim-loading-bar": {"defaultExtension": "js"}
 });
 
 // Apply the user's configuration.

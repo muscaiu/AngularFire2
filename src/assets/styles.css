@@ -1,0 +1,12 @@
+body {
+  margin: 2em;
+  background-color: red;
+}
+
+.clickable{
+  cursor:pointer;
+}
+
+.list-group-item {
+  font-size: 0.5em; 
+}

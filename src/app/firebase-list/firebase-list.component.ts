@@ -1,34 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable , FirebaseListObservable } from 'angularfire2';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
-  //moduleId: module.id,
+  moduleId: module.id,
   selector: 'firebase-list',
-  template: `
-<!-- <button (click)="deleteEverything()">Delete All</button> -->
-
-<div class= "container">
-  <table class= "table table-hover table-bordered">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Update</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of items | async">
-        <td><input type="text" #updatename [value]="item.name" /></td>
-        <td><input type="text" #updateemail [value]="item.email" /></td>
-        <td><button (click)="update(item.$key, updatename.value, updateemail.value)">Update</button></td>
-        <td><button (click)="deleteItem(item.$key)">X</button></td>
-      <tr>
-    </tbody>
-  </table>
-</div>
-
-`
+  templateUrl: './firebase-list.component.html' 
+  , directives: [ROUTER_DIRECTIVES ] 
 })
 export class FirebaseListComponent{
 
@@ -49,5 +27,4 @@ export class FirebaseListComponent{
   deleteEverything() {
     this.items.remove();
   }
-
 }

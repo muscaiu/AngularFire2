@@ -4,7 +4,8 @@ import { AppComponent, environment } from './app/';
 import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
 import {ROUTER_DIRECTIVES } from '@angular/router';
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
-
+//import {SlimLoadingBarService, SlimLoadingBar} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
+  
   enableProdMode();
 
 bootstrap(AppComponent, [
@@ -16,6 +17,7 @@ bootstrap(AppComponent, [
     databaseURL: "https://angular2cloud.firebaseio.com",
     storageBucket: "angular2cloud.appspot.com",
   }),
-  APP_ROUTER_PROVIDERS  
+  APP_ROUTER_PROVIDERS  ,
+  //SlimLoadingBarService
 ])
 .catch(err => console.error(err));;

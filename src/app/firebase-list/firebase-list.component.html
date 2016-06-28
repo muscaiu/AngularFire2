@@ -1,0 +1,30 @@
+<a 
+    [routerLink]="['/formular']" 
+    class="btn btn-primary">
+Add New
+</a>   
+
+<div class= "container">
+  <table class= "table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items | async">
+        <td><input type="text" #updatename [value]="item.name" /></td>
+        <td><input type="text" #updateemail [value]="item.email" /></td>
+        <td><button (click)="update(item.$key, updatename.value, updateemail.value)">Update</button></td>
+        <td class="text-center">
+            <i class="glyphicon glyphicon-remove clickable"
+               (click)="deleteItem(item.$key)">
+            </i>
+        </td>
+      <tr>
+    </tbody>
+  </table>
+</div>
