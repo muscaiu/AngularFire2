@@ -4,7 +4,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import {NavbarComponent} from './navbar/navbar.component';
 
 @Component({
-  moduleId: module.id,
+  //moduleId: module.id,
   selector: 'app-root',
   template: `
   <navbar></navbar>
