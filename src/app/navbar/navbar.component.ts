@@ -15,7 +15,12 @@ export class NavbarComponent{
   lock = new Auth0Lock('9wy0lBjMWP5oi7irUcdjByrxCvm1uQqC','muscaiuuu.eu.auth0.com')
   jwtHelper: JwtHelper = new JwtHelper();
   location: Location;
+  profile : any;
 
+  constructor(){
+    this.profile = JSON.parse(localStorage.getItem('profile'));
+  }
+  
   login(){
     var self = this;
     this.lock.show((err: string, profile: string, id_token: string) =>{
@@ -35,12 +40,14 @@ export class NavbarComponent{
         self.loggedIn();
     });
   }
+
   logout(){
     localStorage.removeItem('profile');
     localStorage.removeItem('id_token');
 
     this.loggedIn();
   }
+  
   loggedIn(){
     return tokenNotExpired();
   }

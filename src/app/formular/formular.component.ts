@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
-import {Router } from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   moduleId: module.id,

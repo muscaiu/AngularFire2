@@ -7,7 +7,7 @@ import {Profile} from './profile';
 export const routes: RouterConfig = [
    { path: 'firebase', component: FirebaseListComponent },   
    { path: 'formular', component: FormularComponent },           
-   { path: 'profile', component: Profile },         
+   //{ path: 'profile', component: Profile },         
 //   { path: 'heroes', component: HeroListComponent },
 //   { path: 'hero/:id', component: HeroDetailComponent }
 ];
