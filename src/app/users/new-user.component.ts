@@ -3,7 +3,7 @@ import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'a
 import {Router} from '@angular/router';
 import {FormBuilder, ControlGroup, Validators} from '@angular/common';
 
-import {BasicValidators} from './shared/basicValidators'
+import {BasicValidators} from '../shared/basicValidators'
 
 @Component({
   moduleId: module.id,

@@ -7,10 +7,10 @@ import {SpinnerComponent} from './spinner.component'
 @Component({
   moduleId: module.id,
   selector: 'firebase-list',
-  templateUrl: './firebase-list.component.html' 
+  templateUrl: './users.component.html' 
   , directives: [ROUTER_DIRECTIVES, SpinnerComponent] 
 })
-export class FirebaseListComponent implements OnInit{
+export class UsersComponent implements OnInit{
   items: FirebaseListObservable<any>;
   loadingLista = true;
 
