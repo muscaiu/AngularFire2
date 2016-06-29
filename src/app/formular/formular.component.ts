@@ -1,18 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
 import {Router} from '@angular/router';
+import {FormBuilder, ControlGroup, Validators} from '@angular/common';
+
+import {BasicValidators} from '../shared/basicValidators'
 
 @Component({
   moduleId: module.id,
   selector: 'formular',
   templateUrl : 'formular.component.html'
 })
-export class FormularComponent {
 
+export class FormularComponent {
+  form: ControlGroup ;
   items: FirebaseListObservable<any>;
 
-  constructor(af: AngularFire, private _router: Router) { 
-    this.items = af.database.list('/messages')
+  constructor(af: AngularFire, 
+              private _router: Router,
+              fb:FormBuilder
+              ) { 
+    this.form = fb.group({        
+        newName:['', Validators.required], 
+        newEmail:['', BasicValidators.email], 
+        newOra:[],
+        newEta:[], 
+        newSesso:[], 
+        newLivelloLingua:[] 
+    })
+    this.items = af.database.list('/hr/users')
    }
 
   addField(newName: string, 

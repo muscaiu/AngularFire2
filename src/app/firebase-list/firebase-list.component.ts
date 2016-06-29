@@ -15,7 +15,7 @@ export class FirebaseListComponent implements OnInit{
   loadingLista = true;
 
   constructor(af: AngularFire) {
-    this.items = af.database.list('/messages');
+    this.items = af.database.list('/hr/users');
     //this.loadingLista = false;
   }
 
@@ -30,5 +30,4 @@ export class FirebaseListComponent implements OnInit{
   deleteItem(key: string) {    
     this.items.remove(key); 
   }
-
 }
