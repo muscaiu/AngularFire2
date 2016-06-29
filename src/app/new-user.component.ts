@@ -3,15 +3,15 @@ import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'a
 import {Router} from '@angular/router';
 import {FormBuilder, ControlGroup, Validators} from '@angular/common';
 
-import {BasicValidators} from '../shared/basicValidators'
+import {BasicValidators} from './shared/basicValidators'
 
 @Component({
   moduleId: module.id,
   selector: 'formular',
-  templateUrl : 'formular.component.html'
+  templateUrl : 'new-user.component.html'
 })
 
-export class FormularComponent {
+export class NewUserComponent {
   form: ControlGroup ;
   items: FirebaseListObservable<any>;
 
@@ -19,7 +19,7 @@ export class FormularComponent {
               private _router: Router,
               fb:FormBuilder
               ) { 
-    this.form = fb.group({        
+    this.form = fb.group({
         newName:['', Validators.required], 
         newEmail:['', BasicValidators.email], 
         newOra:[],

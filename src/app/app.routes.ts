@@ -1,12 +1,12 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
 import {FirebaseListComponent} from './firebase-list/firebase-list.component';
-import {FormularComponent} from './formular/formular.component';
+import {NewUserComponent} from './new-user.component';
 import {Profile} from './profile';
 
 export const routes: RouterConfig = [
-   { path: 'firebase', component: FirebaseListComponent },   
-   { path: 'formular', component: FormularComponent },           
+   { path: 'users', component: FirebaseListComponent },   
+   { path: 'users/new', component: NewUserComponent },           
    //{ path: 'profile', component: Profile },         
 //   { path: 'heroes', component: HeroListComponent },
 //   { path: 'hero/:id', component: HeroDetailComponent }
